@@ -14,11 +14,13 @@ public class EtudiantService {
     @Autowired
     @Qualifier("msql")
     private EtudiantRepo mysqlEtudiantDAO;
-
+    @Autowired
+    @Qualifier("inc")
+    private Idgenerator idgenerator;
 
     public void ajouter(EtudiantDAO edo){
 
-        Etudiant e = new Etudiant( "1",edo.getNom(), edo.getPreom() );
+        Etudiant e = new Etudiant( idgenerator.genaratId(),edo.getNom(), edo.getPreom() );
         mysqlEtudiantDAO.persist(e);
     }
 }
