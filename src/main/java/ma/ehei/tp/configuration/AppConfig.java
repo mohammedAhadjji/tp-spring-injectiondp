@@ -1,5 +1,6 @@
 package ma.ehei.tp.configuration;
 
+import ma.ehei.tp.service.EtudiantService;
 import ma.ehei.tp.service.reduction.ReductionService;
 import ma.ehei.tp.service.reduction.impl.ParametrableReductionService;
 import org.springframework.context.annotation.*;
@@ -16,4 +17,5 @@ public class AppConfig {
         reductionService.setTaux(30.0);
         return reductionService;
     }
+
 }
